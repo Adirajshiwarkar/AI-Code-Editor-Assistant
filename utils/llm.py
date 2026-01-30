@@ -22,7 +22,7 @@ class BaseLLM(abc.ABC):
 class OpenAILLM(BaseLLM):
     """OpenAI implementation of the LLM interface."""
     
-    def __init__(self, model: str = "gpt-4o", api_key: Optional[str] = None):
+    def __init__(self, model: str = "gpt-4o-mini", api_key: Optional[str] = None):
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY not found in environment or passed directly.")
