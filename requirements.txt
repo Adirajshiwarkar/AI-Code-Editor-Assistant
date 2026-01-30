@@ -1,0 +1,8 @@
+openai
+argparse
+python-dotenv
+flask
+flask-cors
+crewai
+crewai[tools]
+langchain-openai
