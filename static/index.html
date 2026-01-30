@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Editor | Smart Analysis & Review</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-microchip"></i>
+                <span>AI Code Editor</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-view="assistant"><i class="fas fa-terminal"></i> Assistant</div>
+                <div class="nav-item" data-view="projects"><i class="fas fa-folder-open"></i> Projects</div>
+                <div class="nav-item" data-view="history"><i class="fas fa-clock-rotate-left"></i> History</div>
+                <div class="nav-item" data-view="preferences"><i class="fas fa-sliders"></i> Preferences</div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">AI</div>
+                    <div class="user-info">
+                        <span class="user-name">Developer</span>
+                        <span class="user-status">Pro Member</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Autonomous Reasoning Engine</h1>
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    System Active
+                </div>
+            </header>
+
+            <div class="chat-container" id="chat-container">
+                <div class="message assistant">
+                    <div class="bubble">
+                        Greetings. I am an intelligent code editor. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <section class="code-editor-section" id="code-editor-section"
+                style="display: none; opacity: 0; transform: translateX(20px);">
+                <div class="section-header">
+                    <span><i class="fas fa-code-merge"></i> Proposed Changes</span>
+                    <button class="close-btn" id="close-code-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="code-wrapper">
+                    <pre id="code-display"><code></code></pre>
+                </div>
+                <div class="section-footer">
+                    <button class="btn secondary" id="copy-code-btn"><i class="fas fa-copy"></i> Copy Code</button>
+                </div>
+            </section>
+
+            <footer class="input-area">
+                <div class="input-toolbar">
+                    <button class="tool-btn" id="upload-btn" title="Attach File">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <button class="tool-btn" id="paste-btn" title="Paste Code Snippet">
+                        <i class="fas fa-code"></i>
+                    </button>
+                    <div id="file-status" class="file-status"></div>
+                </div>
+                <div class="input-box-container">
+                    <textarea id="user-input"
+                        placeholder="Instruction (e.g., 'Refactor this for performance')"></textarea>
+                    <button id="send-btn" class="send-btn">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+                <input type="file" id="file-input" style="display: none;">
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="paste-modal">
+        <div class="modal-content">
+            <h3>Intellectual Input</h3>
+            <p style="color: var(--text-mid); font-size: 0.9rem; margin-bottom: 16px;">Paste the source code you wish to
+                analyze.</p>
+            <textarea id="paste-area" placeholder="Source code here..."></textarea>
+            <div class="modal-actions">
+                <button class="btn secondary" id="cancel-paste">Discard</button>
+                <button class="btn primary" id="confirm-paste">Inject Code</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
